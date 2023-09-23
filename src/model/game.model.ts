@@ -8,7 +8,6 @@ export interface GameDocument extends Document {
   createdAt?: Date;
   updatedAt?: Date;
 }
-
 const gameSchema = new mongoose.Schema(
   {
     moves: [

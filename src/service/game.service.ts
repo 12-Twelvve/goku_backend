@@ -1,10 +1,10 @@
 import Game, { GameDocument } from "../model/game.model";
 
+
 // Retrieve a list of played games
 export async function getGames(): Promise<GameDocument[]> {
   return Game.find().exec();
 }
-
 // Retrieve a single game by ID
 export async function getGameById(gameId: string): Promise<GameDocument | null> {
   return Game.findById(gameId).exec();
