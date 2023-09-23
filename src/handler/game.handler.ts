@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-// import Game, { GameDocument } from "../model/game.model";
 import {createGame, 
         getGameById, 
         getGames, 
@@ -74,13 +73,11 @@ export async function updateGameHandler(req: Request, res: Response) {
   }
 }
 
-
 // Update the winner of a game handler
 export async function updateGameWinnerHandler(req: Request, res: Response) {
   try {
     const  id  = req.params.id;
     const { winner } = req.body;
-    // console.log(id, winner)
     const updatedGame = await updateGameWinner(id, winner);
     if (!updatedGame) {
       return res.status(404).json({ message: 'Gaaame not found' });
