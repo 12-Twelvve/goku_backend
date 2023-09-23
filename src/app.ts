@@ -22,19 +22,19 @@ app.use(
 
 app.use(express.json())
 
-// Define a sample route
+
 app.get('/', (req, res) => {
   res.send('Hello, Gomoku API!');
 });
 
+// user api
 app.use('/api/auth', authHandler)
-
+// game api
 app.get("/api/games", getGamesHandler);
 app.get("/api/game/:id", getGameByIdHandler);
 app.post("/api/game/create", createGameHandler);
 app.put("/api/game/:id", updateGameHandler);
 app.put("/api/game/winner/:id", updateGameWinnerHandler);
-
 
 
 export const server = createServer(app)
